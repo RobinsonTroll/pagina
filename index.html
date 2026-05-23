@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Cuenta</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{
+    --primary:#1d4ed8;
+    --danger:#d32f2f;
+    --success:#16a34a;
+    --text:#222;
+    --gray:#6b7280;
+    --border:#e5e7eb;
+    --bg:#f5f6f8;
+    --white:#fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Roboto, sans-serif;
+    background:var(--bg);
+}
+
+.app{
+    max-width:430px;
+    margin:auto;
+    min-height:100vh;
+    background:var(--bg);
+    padding-bottom:90px;
+}
+
+.header{
+    background:white;
+    height:85px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    border-bottom:1px solid var(--border);
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.left i{
+    color:var(--primary);
+    font-size:20px;
+}
+
+.title{
+    color:var(--primary);
+    font-size:20px;
+    font-weight:500;
+}
+
+.help{
+    color:var(--primary);
+    font-weight:500;
+}
+
+.card{
+    background:white;
+    margin-top:10px;
+    padding:22px;
+}
+
+.balance-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.balance{
+    color:var(--danger);
+    font-size:56px;
+    font-weight:500;
+}
+
+.sub-balance{
+    color:var(--danger);
+    margin-top:10px;
+}
+
+.fake-card{
+    width:145px;
+    height:90px;
+    background:#ffd600;
+    border-radius:10px;
+    position:relative;
+}
+
+.fake-card{
+    width:145px;
+    height:90px;
+    background:#ffd600;
+    border-radius:10px;
+    position:relative;
+}
+
+.fake-card:before{
+    content:"";
+    position:absolute;
+    left:18px;
+    top:28px;
+    width:32px;
+    height:22px;
+    background:white;
+    border-radius:4px;
+}
+
+.fake-card:after{
+    content:"VISA";
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    font-weight:bold;
+
+}
+
+.divider{
+    margin:20px 0;
+    border-top:1px solid var(--border);
+}
+
+.account{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.account-name{
+    font-size:22px;
+    font-weight:500;
+}
+
+.account-type,
+.account-number{
+    color:var(--gray);
+    margin-top:6px;
+}
+
+.share{
+    color:var(--primary);
+}
+
+.actions{
+    background:white;
+    display:flex;
+    justify-content:space-around;
+    padding:20px 10px;
+    margin-top:2px;
+}
+
+.action{
+    text-align:center;
+    width:90px;
+    position:relative;
+}
+
+.nuevo{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:58px;
+    background:#00A79D;
+    color:#fff;
+    font-size:11px;
+    font-weight:600;
+    padding:4px 16px;
+    border-radius:20px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    z-index:10;
+}
+
+.icon{
+    width:72px;
+    height:72px;
+    border:1px solid var(--border);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    color:var(--primary);
+    font-size:24px;
+}
+
+.action p{
+    margin-top:10px;
+    font-size:14px;
+}
+
+.movements{
+    padding:20px;
+}
+
+.mov-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.mov-header h2{
+    font-size:24px;
+}
+
+.filter{
+    color:var(--primary);
+}
+
+.date{
+    margin:25px 0 10px;
+    font-weight:500;
+}
+
+.transaction{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.amount-negative{
+    color:var(--danger);
+    font-weight:700;
+}
+
+.amount-positive{
+    color:var(--success);
+    font-weight:700;
+}
+
+.bottom{
+    position:fixed;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    max-width:430px;
+    width:100%;
+    background:white;
+    border-top:1px solid var(--border);
+    display:flex;
+    justify-content:space-around;
+    padding:12px 0;
+}
+
+.menu{
+    text-align:center;
+    color:#777;
+    font-size:13px;
+}
+
+.menu i{
+    display:block;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.active{
+    color:var(--primary);
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="header">
+    <div class="left">
+        <i class="fa-solid fa-arrow-left"></i>
+        <div class="title">Mi Cuenta</div>
+    </div>
+
+    <div class="help">
+        <i class="fa-regular fa-circle-question"></i>
+        Ayuda
+    </div>
+</header>
+
+<section class="card">
+
+    <div class="balance-row">
+
+        <div>
+            <div class="balance">
+                -$2,980.00
+                <i class="fa-solid fa-eye"></i>
+            </div>
+
+            <div class="sub-balance">
+                Saldo contable: -$2,980.00
+            </div>
+        </div>
+
+        <div class="fake-card"></div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="account">
+
+        <div>
+            <div class="account-name">AHO893 ⭐</div>
+            <div class="account-type">Cuenta Transaccional</div>
+            <div class="account-number">Nro. 2209057893</div>
+        </div>
+
+        <div class="share">
+            <i class="fa-solid fa-share-nodes"></i>
+            Compartir
+        </div>
+
+    </div>
+
+</section>
+
+<section class="actions">
+
+    <div class="action">
+        <div class="icon"><i class="fa-solid fa-right-left"></i></div>
+        <p>Transferir dinero</p>
+    </div>
+
+    <div class="action">
+        <div class="icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+        <p>Transferir a mis cuentas</p>
+    </div>
+
+    <div class="action">
+        <div class="icon"><i class="fa-solid fa-wallet"></i></div>
+        <p>Realizar Pagos</p>
+    </div>
+
+  <div class="action">
+    <span class="nuevo">NUEVO</span>
+
+    <div class="icon">
+        <i class="fa-solid fa-shield"></i>
+    </div>
+
+    <p>Verificar transferencia</p>
+</div>
+
+</section>
+
+<section class="movements">
+
+    <div class="mov-header">
+        <h2>Movimientos</h2>
+        <div class="filter">
+            <i class="fa-regular fa-calendar"></i>
+            Filtrar por fechas
+        </div>
+    </div>
+
+    <div class="date">Hoy</div>
+
+    <div class="transaction">
+    <div>
+        EXTORNO DE REMESA INTERNACIONAL<br>
+        Ref. 00000tts322697210076
+    </div>
+    <div class="amount-negative">
+        -$1,920.00
+    </div>
+</div>
+    <div class="transaction">
+    <div>
+        EXTORNO DE REMESA INTERNACIONAL<br>
+        Ref. 00000tts148082832197
+    </div>
+
+    <div class="amount-negative">
+        -$1,000.00
+    </div>
+</div>
+
+</section>
+
+<nav class="bottom">
+
+    <div class="menu">
+        <i class="fa-solid fa-house"></i>
+        Inicio
+    </div>
+
+    <div class="menu active">
+        <i class="fa-solid fa-wallet"></i>
+        Productos
+    </div>
+
+    <div class="menu">
+        <i class="fa-solid fa-building-columns"></i>
+        Solicitudes
+    </div>
+
+    <div class="menu">
+        <i class="fa-regular fa-user"></i>
+        Perfil
+    </div>
+
+</nav>
+
+</div>
+
+</body>
+</html>
