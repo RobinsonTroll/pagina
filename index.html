@@ -72,6 +72,33 @@ body{
     color:var(--primary);
     font-weight:500;
 }
+.blocked-box{
+    background:#fff5f5;
+    border:1px solid #f5b5b5;
+    margin:16px;
+    padding:22px;
+    border-radius:24px;
+}
+
+.blocked-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#d32f2f;
+    font-size:20px;
+    font-weight:700;
+}
+
+.blocked-title i{
+    font-size:22px;
+}
+
+.blocked-text{
+    margin-top:18px;
+    color:#ef3b2d;
+    font-size:15px;
+    line-height:1.8;
+}
 
 .card{
     background:white;
@@ -294,6 +321,20 @@ body{
         Ayuda
     </div>
 </header>
+<div class="blocked-box">
+
+    <div class="blocked-title">
+        <i class="fa-solid fa-lock"></i>
+        Cuenta bloqueada
+    </div>
+
+    <div class="blocked-text">
+        Detectamos actividad inusual en esta cuenta.
+        Algunas funciones fueron deshabilitadas temporalmente
+        por motivos de seguridad.
+    </div>
+
+</div>
 
 <section class="card">
 
