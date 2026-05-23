@@ -257,9 +257,40 @@ body{
     padding:18px;
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    align-items:flex-start;
+    gap:12px;
     margin-bottom:12px;
     font-size:13px;
+}
+
+/* TEXTO IZQUIERDO */
+.transaction > div:first-child{
+    flex:1;
+    min-width:0;
+    line-height:1.4;
+}
+
+/* BLOQUE DERECHO */
+.transaction > div:last-child{
+    text-align:right;
+    flex-shrink:0;
+}
+
+/* MONTOS */
+.amount-negative,
+.amount-positive{
+    font-weight:700;
+    font-size:16px;
+    white-space:nowrap;
+}
+
+/* SALDO */
+.balance-after{
+    font-size:13px;
+    color:#666;
+    margin-top:4px;
+    font-weight:500;
+    white-space:nowrap;
 }
 
 .amount-negative{
