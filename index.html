@@ -273,6 +273,12 @@ body{
     color:var(--success);
     font-weight:700;
 }
+.balance-after{
+    font-size:13px;
+    color:#666;
+    margin-top:4px;
+    font-weight:500;
+}
 
 .bottom{
     position:fixed;
@@ -329,7 +335,7 @@ body{
     </div>
 
     <div class="blocked-text">
-        Detectamos actividad inusual en esta cuenta.
+        Detectamos actividad inusual en tu cuenta.
         Algunas funciones fueron deshabilitadas temporalmente
         por motivos de seguridad.
     </div>
@@ -342,12 +348,12 @@ body{
 
         <div>
             <div class="balance">
-                -$2,980.00
+                -$2,460.00
                 <i class="fa-solid fa-eye"></i>
             </div>
 
             <div class="sub-balance">
-                Saldo contable: -$2,980.00
+                Saldo contable: -$2,460.00
             </div>
         </div>
 
@@ -407,6 +413,7 @@ body{
 
     <div class="mov-header">
         <h2>Movimientos</h2>
+
         <div class="filter">
             <i class="fa-regular fa-calendar"></i>
             Filtrar por fechas
@@ -415,31 +422,78 @@ body{
 
     <div class="date">Hoy</div>
 
+    <!-- EXTORNO 1 -->
+
     <div class="transaction">
-    <div>
-        EXTORNO DE REMESA INTERNACIONAL<br>
-        Ref. 00000tts322697210076
-    </div>
-    <div class="amount-negative">
-        -$1,920.00
-    </div>
-</div>
-    <div class="transaction">
-    <div>
-        EXTORNO DE REMESA INTERNACIONAL<br>
-        Ref. 00000tts148082832197
+        <div>
+            EXTORNO DE REMESA INTERNACIONAL<br>
+            Ref. 00000tts322697210076
+        </div>
+
+        <div>
+            <div class="amount-negative">
+                -$1,920.00
+            </div>
+
+            <div class="balance-after">
+                saldo: -$2,460.00
+            </div>
+        </div>
     </div>
 
-    <div class="amount-negative">
-        -$1,000.00
+    <!-- EXTORNO 2 -->
+
+    <div class="transaction">
+        <div>
+            EXTORNO DE REMESA INTERNACIONAL<br>
+            Ref. 00000tts148082832197
+        </div>
+
+        <div>
+            <div class="amount-negative">
+                -$1,000.00
+            </div>
+
+            <div class="balance-after">
+                saldo: -$540.00
+            </div>
+        </div>
     </div>
-</div>
-<div class="transaction">
-    <div>
-        Transf.Directa de Benitez Arauz Giana Tereza <br>
+
+    <!-- TRANSFERENCIA 1 -->
+
+    <div class="transaction">
+        <div>
+            Transf.Directa de Benitez Arauz Giana Tereza
+        </div>
+
+        <div>
+            <div class="amount-positive">
+                +$60.00
+            </div>
+
+            <div class="balance-after">
+                saldo: $460.00
+            </div>
+        </div>
     </div>
-    <div class="amount-positive">
-        +$60.00
+
+    <!-- TRANSFERENCIA 2 -->
+
+    <div class="transaction">
+        <div>
+            Transf.Directa de Benitez Arauz Giana Tereza
+        </div>
+
+        <div>
+            <div class="amount-positive">
+                +$400.00
+            </div>
+
+            <div class="balance-after">
+                saldo: $400.00
+            </div>
+        </div>
     </div>
 
 </section>
